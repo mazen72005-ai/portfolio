@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>دار اللوكس | Dar Luxe — مفروشات وديكور منزلي عصري</title>
+  <meta name="description" content="متجر دار اللوكس للمفروشات الفاخرة والديكور المنزلي العصري في مصر. أطقم سفرة، خداديات، رانر، وإكسسوارات راقية بشحن لجميع المحافظات." />
+
+  <!-- خط Cairo العربي من Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- تحميل مكتبة Tailwind CSS وتخصيص ألوان الهوية البصرية -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            cairo: ['Cairo', 'sans-serif'],
+          },
+          colors: {
+            ivory: '#FAF8F5',
+            cream: '#F3EEE6',
+            sand: '#E6DDD0',
+            charcoal: '#1E242B',
+            muted: '#5C646D',
+            gold: '#B8860B',
+            bronze: '#C58940',
+            bronzeDark: '#A36D2B',
+          },
+          boxShadow: {
+            luxury: '0 10px 35px -10px rgba(30, 36, 43, 0.08)',
+            'luxury-hover': '0 20px 45px -12px rgba(30, 36, 43, 0.14)',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="font-cairo bg-ivory text-charcoal antialiased selection:bg-bronze/20 selection:text-charcoal overflow-x-hidden">
+
+  <!-- ==================== 1. شريط الإعلان العلوي (Announcement Bar) ==================== -->
+  <div class="bg-charcoal text-ivory text-xs sm:text-sm py-2.5 px-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-center">
+      <span class="inline-flex items-center gap-1.5">
+        <svg class="w-4 h-4 text-bronze shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+        </svg>
+        شحن مجاني لجميع الطلبات فوق <strong class="text-bronze font-bold">1,500 ج.م</strong>
+      </span>
+      <span class="hidden sm:inline text-ivory/30">|</span>
+      <button
+        type="button"
+        onclick="copyPromoCode()"
+        class="inline-flex items-center gap-1.5 hover:text-bronze transition-colors cursor-pointer rounded-md px-2 py-0.5 bg-white/5 hover:bg-white/10"
+        title="اضغط لنسخ كود الخصم"
+      >
+        <span>خصم إضافي 15% باستخدام الكود:</span>
+        <strong class="text-bronze tracking-wider font-extrabold">EBIZ15</strong>
+        <svg class="w-3.5 h-3.5 text-bronze/90" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== 2. شريط التنقل الثابت (Sticky Navbar) ==================== -->
+  <header class="sticky top-0 z-40 bg-ivory/95 backdrop-blur-md border-b border-sand/80 transition-shadow duration-300" id="mainHeader">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-3">
+
+        <!-- زر القائمة للموبايل + الشعار -->
+        <div class="flex items-center gap-3">
+          <button
+            type="button"
+            id="mobileMenuBtn"
+            onclick="toggleMobileMenu()"
+            class="lg:hidden p-2.5 rounded-xl text-charcoal hover:bg-cream transition-colors"
+            aria-label="فتح القائمة"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+
+          <a href="#home" class="flex items-center gap-2.5 group">
+            <div class="w-10 h-10 rounded-xl bg-charcoal text-bronze flex items-center justify-center shadow-sm group-hover:bg-bronze group-hover:text-ivory transition-colors duration-300">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 12l8-4.5M12 12v9M12 12L4 7.5" />
+              </svg>
+            </div>
+            <div class="leading-tight">
+              <span class="block text-lg sm:text-xl font-extrabold text-charcoal tracking-tight">دار اللوكس</span>
+              <span class="block text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-bronze">DAR LUXE</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- روابط التنقل لسطح المكتب -->
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-charcoal/85">
+          <a href="#home" class="hover:text-bronze transition-colors">الرئيسية</a>
+          <a href="#products" class="hover:text-bronze transition-colors">المنتجات</a>
+          <a href="#why-us" class="hover:text-bronze transition-colors">لماذا نحن</a>
+          <a href="#reviews" class="hover:text-bronze transition-colors">آراء العملاء</a>
+          <a href="#contact" class="hover:text-bronze transition-colors">تواصل معنا</a>
+        </nav>
+
+        <!-- البحث المباشر + زر السلة -->
+        <div class="flex items-center gap-2.5 sm:gap-3">
+          <!-- حقل البحث لسطح المكتب والتابلت -->
+          <div class="relative hidden md:block w-56 xl:w-64">
+            <input
+              type="text"
+              id="desktopSearchInput"
+              oninput="handleSearch(this.value)"
+              placeholder="ابحث عن مفرش، خدادية..."
+              class="w-full bg-cream/80 border border-sand rounded-xl py-2.5 pr-10 pl-4 text-sm text-charcoal placeholder:text-muted/70 focus:outline-none focus:border-bronze focus:bg-white transition-all"
+            />
+            <svg class="w-4 h-4 text-muted absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
+            </svg>
+          </div>
+
+          <!-- زر السلة مع العداد المباشر -->
+          <button
+            type="button"
+            onclick="openCart()"
+            class="relative inline-flex items-center gap-2 bg-charcoal hover:bg-bronze text-ivory px-3.5 sm:px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 shadow-sm cursor-pointer"
+            aria-label="سلة المشتريات"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+            <span class="hidden sm:inline">السلة</span>
+            <span
+              id="cartCountBadge"
+              class="min-w-[22px] h-[22px] px-1.5 rounded-full bg-bronze text-white text-xs font-bold flex items-center justify-center transition-transform duration-300"
+            >0</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- شريط البحث للموبايل -->
+      <div class="pb-3 md:hidden">
+        <div class="relative w-full">
+          <input
+            type="text"
+            id="mobileSearchInput"
+            oninput="handleSearch(this.value)"
+            placeholder="ابحث عن أطقم سفرة، خداديات، رانر..."
+            class="w-full bg-cream/90 border border-sand rounded-xl py-2.5 pr-10 pl-4 text-sm text-charcoal placeholder:text-muted/70 focus:outline-none focus:border-bronze focus:bg-white transition-all"
+          />
+          <svg class="w-4 h-4 text-muted absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- قائمة التنقل المنسدلة للموبايل -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-sand bg-ivory px-4 py-4 space-y-1 shadow-lg">
+      <a href="#home" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-semibold hover:bg-cream hover:text-bronze transition-colors">الرئيسية</a>
+      <a href="#products" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-semibold hover:bg-cream hover:text-bronze transition-colors">المنتجات</a>
+      <a href="#why-us" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-semibold hover:bg-cream hover:text-bronze transition-colors">لماذا نحن</a>
+      <a href="#reviews" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-semibold hover:bg-cream hover:text-bronze transition-colors">آراء العملاء</a>
+      <a href="#contact" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-semibold hover:bg-cream hover:text-bronze transition-colors">تواصل معنا</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== 3. القسم الرئيسي (Hero Section) ==================== -->
+    <section id="home" class="relative overflow-hidden py-12 sm:py-16 lg:py-20">
+      <!-- لمسات خلفية ديكورية ناعمة -->
+      <div class="absolute -top-24 -left-24 w-80 h-80 bg-bronze/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-sand/50 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+          <!-- النص الدعائي وأزرار الإجراء -->
+          <div class="lg:col-span-6 space-y-6 text-center lg:text-right">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cream border border-sand text-bronze font-bold text-xs sm:text-sm">
+              <span class="w-2 h-2 rounded-full bg-bronze animate-pulse"></span>
+              تشكيلة الموسم الجديد 2026 — صناعة مصرية بمعايير عالمية
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-charcoal leading-[1.35]">
+              أضف لمسة <span class="text-bronze">فخامة دافئة</span> لكل ركن في منزلك العصري
+            </h1>
+
+            <p class="text-muted text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+              في <strong class="text-charcoal">دار اللوكس</strong> نختار لك أرقى المفروشات المنزلية، أطقم السفرة الكتانية والقطنية، والخداديات المطرزة بعناية لتجمع بين الرقي العملي والجودة التي تدوم لسنوات.
+            </p>
+
+            <!-- أزرار الدعوة للإجراء (CTAs) -->
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
+              <a
+                href="#products"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-charcoal hover:bg-bronze text-ivory px-7 py-3.5 rounded-xl font-bold text-base transition-all duration-300 shadow-luxury hover:shadow-luxury-hover"
+              >
+                <span>تسوق التشكيلة الآن</span>
+                <svg class="w-5 h-5 rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+
+              <button
+                type="button"
+                onclick="copyPromoCode()"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-cream text-charcoal border border-bronze/50 px-6 py-3.5 rounded-xl font-bold text-base transition-all duration-300 cursor-pointer"
+              >
+                <svg class="w-5 h-5 text-bronze" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                </svg>
+                <span>كود خصم 15%</span>
+              </button>
+            </div>
+
+            <!-- شارات الثقة الثلاث -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-5 border-t border-sand/80">
+              <div class="flex items-center justify-center lg:justify-start gap-2.5 bg-white/70 border border-sand/60 rounded-xl p-3">
+                <div class="w-9 h-9 rounded-lg bg-cream text-bronze flex items-center justify-center shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <span class="text-xs sm:text-sm font-bold text-charcoal">دفع عند الاستلام</span>
+              </div>
+
+              <div class="flex items-center justify-center lg:justify-start gap-2.5 bg-white/70 border border-sand/60 rounded-xl p-3">
+                <div class="w-9 h-9 rounded-lg bg-cream text-bronze flex items-center justify-center shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+                  </svg>
+                </div>
+                <span class="text-xs sm:text-sm font-bold text-charcoal">شحن لجميع المحافظات</span>
+              </div>
+
+              <div class="flex items-center justify-center lg:justify-start gap-2.5 bg-white/70 border border-sand/60 rounded-xl p-3">
+                <div class="w-9 h-9 rounded-lg bg-cream text-bronze flex items-center justify-center shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                </div>
+                <span class="text-xs sm:text-sm font-bold text-charcoal">استبدال خلال 14 يوم</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- الصورة البصرية الفاخرة للقسم الرئيسي -->
+          <div class="lg:col-span-6">
+            <div class="relative rounded-3xl overflow-hidden shadow-luxury bg-cream border border-sand/70 aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/3]">
+              <img
+                src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1100&q=80"
+                alt="مفروشات وديكور منزلي عصري من دار اللوكس"
+                class="w-full h-full object-cover"
+                onerror="this.onerror=null;this.src='https://placehold.co/900x700/F3EEE6/1E242B?text=Dar+Luxe+Home+Decor';"
+              />
+              <!-- تدرج لوني خفيف وبطاقة تقييم عائمة -->
+              <div class="absolute inset-0 bg-gradient-to-t from-charcoal/50 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 right-4 left-4 sm:left-auto sm:w-72 bg-ivory/95 backdrop-blur-md p-4 rounded-2xl border border-sand shadow-lg">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-xs font-bold text-bronze">اختيار العملاء الأول</span>
+                  <span class="text-xs font-bold text-charcoal flex items-center gap-1">
+                    4.9
+                    <svg class="w-3.5 h-3.5 text-gold fill-gold" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  </span>
+                </div>
+                <p class="text-sm font-bold text-charcoal">أطقم سفرة وخداديات من الكتان والقطن المصري الفاخر</p>
+                <p class="text-xs text-muted mt-0.5">+2,400 عميل سعيد في جميع أنحاء مصر</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. كتالوج المنتجات (Product Catalog) ==================== -->
+    <section id="products" class="py-14 sm:py-20 bg-white/60 border-y border-sand/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- عنوان القسم -->
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="text-bronze font-bold text-sm tracking-wide">تشكيلتنا المختارة</span>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-charcoal mt-1.5">
+            منتجات دار اللوكس الفاخرة
+          </h2>
+          <p class="text-muted text-sm sm:text-base mt-2">
+            تصفح أحدث تصميمات المفروشات والديكور بأسعار تنافسية وجودة خامات مضمونة 100%
+          </p>
+        </div>
+
+        <!-- أدوات الفلترة والترتيب -->
+        <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 mb-8 bg-ivory p-4 rounded-2xl border border-sand/80">
+          <!-- أزرار التصنيفات -->
+          <div id="categoryFilters" class="flex flex-wrap items-center gap-2">
+            <button type="button" data-category="الكل" onclick="filterByCategory('الكل')" class="category-btn px-4 py-2 rounded-xl text-sm font-bold transition-all cursor-pointer bg-charcoal text-ivory shadow-sm">
+              الكل
+            </button>
+            <button type="button" data-category="أطقم سفرة" onclick="filterByCategory('أطقم سفرة')" class="category-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all cursor-pointer bg-white text-charcoal border border-sand hover:border-bronze">
+              أطقم سفرة
+            </button>
+            <button type="button" data-category="خداديات وكوشنز" onclick="filterByCategory('خداديات وكوشنز')" class="category-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all cursor-pointer bg-white text-charcoal border border-sand hover:border-bronze">
+              خداديات وكوشنز
+            </button>
+            <button type="button" data-category="رانر ومفارش" onclick="filterByCategory('رانر ومفارش')" class="category-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all cursor-pointer bg-white text-charcoal border border-sand hover:border-bronze">
+              رانر ومفارش
+            </button>
+            <button type="button" data-category="إكسسوارات السفرة" onclick="filterByCategory('إكسسوارات السفرة')" class="category-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all cursor-pointer bg-white text-charcoal border border-sand hover:border-bronze">
+              إكسسوارات السفرة
+            </button>
+          </div>
+
+          <!-- قائمة الترتيب وعدد النتائج -->
+          <div class="flex items-center justify-between lg:justify-end gap-3 border-t lg:border-t-0 pt-3 lg:pt-0 border-sand/70">
+            <span id="productsCountLabel" class="text-xs sm:text-sm font-semibold text-muted">عرض 8 منتجات</span>
+            <div class="flex items-center gap-2">
+              <label for="sortSelect" class="text-xs sm:text-sm font-bold text-charcoal shrink-0">ترتيب حسب:</label>
+              <select
+                id="sortSelect"
+                onchange="handleSort(this.value)"
+                class="bg-white border border-sand rounded-xl px-3.5 py-2 text-sm font-semibold text-charcoal focus:outline-none focus:border-bronze cursor-pointer"
+              >
+                <option value="bestseller">الأكثر مبيعاً</option>
+                <option value="price-asc">الأقل سعراً</option>
+                <option value="price-desc">الأعلى سعراً</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- شبكة عرض المنتجات -->
+        <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- يتم حقن البطاقات ديناميكياً عبر JavaScript -->
+        </div>
+
+        <!-- حالة عدم وجود نتائج بحث -->
+        <div id="emptyProductsState" class="hidden text-center py-16 bg-ivory rounded-3xl border border-sand">
+          <div class="w-16 h-16 mx-auto rounded-2xl bg-cream text-bronze flex items-center justify-center mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-charcoal">لا توجد منتجات مطابقة لبحثك</h3>
+          <p class="text-sm text-muted mt-1 mb-5">جرّب البحث بكلمة أخرى أو تصفح جميع التصنيفات المتاحة.</p>
+          <button
+            type="button"
+            onclick="resetFilters()"
+            class="bg-charcoal hover:bg-bronze text-ivory px-6 py-2.5 rounded-xl text-sm font-bold transition-colors cursor-pointer"
+          >
+            عرض جميع المنتجات
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 5. لماذا تختار دار اللوكس؟ (Why Choose Us) ==================== -->
+    <section id="why-us" class="py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-bronze font-bold text-sm">قيمتنا المضافة</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-charcoal mt-1.5">لماذا يثق بنا عملاؤنا؟</h2>
+          <p class="text-muted text-sm sm:text-base mt-2">نحرص في كل تفصيلة على تقديم تجربة تسوق إلكتروني آمنة وسريعة تليق بذوقك الرفيع</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- بطاقة 1 -->
+          <div class="bg-white rounded-2xl p-6 border border-sand/80 shadow-luxury hover:shadow-luxury-hover hover:-translate-y-1 transition-all duration-300">
+            <div class="w-12 h-12 rounded-2xl bg-cream text-bronze flex items-center justify-center mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-charcoal mb-2">خامات قطن وكتان طبيعي</h3>
+            <p class="text-sm text-muted leading-relaxed">نستخدم أجود أنواع القطن المصري والكتان المعالج ضد الانكماش وثبات الألوان مع الغسيل المتكرر.</p>
+          </div>
+
+          <!-- بطاقة 2 -->
+          <div class="bg-white rounded-2xl p-6 border border-sand/80 shadow-luxury hover:shadow-luxury-hover hover:-translate-y-1 transition-all duration-300">
+            <div class="w-12 h-12 rounded-2xl bg-cream text-bronze flex items-center justify-center mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-charcoal mb-2">شحن سريع لباب المنزل</h3>
+            <p class="text-sm text-muted leading-relaxed">توصيل خلال 24 إلى 48 ساعة للقاهرة والجيزة، ومن 2 إلى 4 أيام لجميع محافظات مصر بتغليف فاخر.</p>
+          </div>
+
+          <!-- بطاقة 3 -->
+          <div class="bg-white rounded-2xl p-6 border border-sand/80 shadow-luxury hover:shadow-luxury-hover hover:-translate-y-1 transition-all duration-300">
+            <div class="w-12 h-12 rounded-2xl bg-cream text-bronze flex items-center justify-center mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-charcoal mb-2">معاينة وضمان الاستبدال</h3>
+            <p class="text-sm text-muted leading-relaxed">إمكانية فحص المنتج والتأكد من الجودة مع سياسة استبدال واسترجاع مرنة خلال 14 يوماً.</p>
+          </div>
+
+          <!-- بطاقة 4 -->
+          <div class="bg-white rounded-2xl p-6 border border-sand/80 shadow-luxury hover:shadow-luxury-hover hover:-translate-y-1 transition-all duration-300">
+            <div class="w-12 h-12 rounded-2xl bg-cream text-bronze flex items-center justify-center mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-charcoal mb-2">خيارات دفع متنوعة وآمنة</h3>
+            <p class="text-sm text-muted leading-relaxed">ادفع بالطريقة التي تناسبك سواء نقداً عند الاستلام، أو عبر فودافون كاش، أو بالبطاقة البنكية.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. آراء العملاء (Customer Reviews) ==================== -->
+    <section id="reviews" class="py-16 sm:py-20 bg-cream/60 border-t border-sand/70">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-bronze font-bold text-sm">تجارب حقيقية</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-charcoal mt-1.5">ماذا يقول عملاؤنا عن دار اللوكس؟</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- رأي 1 -->
+          <article class="bg-white rounded-2xl p-6 border border-sand/80 shadow-luxury flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-1 text-gold mb-3" aria-label="تقييم 5 من 5">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p class="text-sm sm:text-base text-charcoal/90 leading-relaxed mb-5">
+                "طلبت طقم مفرش السفرة 6 كراسي والخامة بجد فوق الوصف! التطريز شيك جداً واللون مطابق للصور بالظبط، وصلني القاهرة الجديدة في أقل من 24 ساعة بالتغليف الفاخر بتاعه."
+              </p>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-sand/60">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-charcoal text-bronze font-bold flex items-center justify-center text-sm">ن.ع</div>
+                <div>
+                  <h4 class="text-sm font-bold text-charcoal">نورمان عبد الرحمن</h4>
+                  <span class="text-xs text-muted">القاهرة الجديدة</span>
+                </div>
+              </div>
+              <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full">شراء مؤكد</span>
+            </div>
+          </article>
+
+          <!-- رأي 2 -->
+          <article class="bg-white rounded-2xl p-6 border border-sand/80 shadow-luxury flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-1 text-gold mb-3" aria-label="تقييم 5 من 5">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p class="text-sm sm:text-base text-charcoal/90 leading-relaxed mb-5">
+                "أخدت طقم الخداديات القطيفة مع رانر السفرة الكتان للريسبشن، غيروا شكل البيت بالكامل. استخدمت كود الخصم EBIZ15 ووفر معايا كتير. تجربة محترمة جداً وهكررها أكيد."
+              </p>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-sand/60">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-charcoal text-bronze font-bold flex items-center justify-center text-sm">م.س</div>
+                <div>
+                  <h4 class="text-sm font-bold text-charcoal">مروة السعيد</h4>
+                  <span class="text-xs text-muted">الإسكندرية</span>
+                </div>
+              </div>
+              <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full">شراء مؤكد</span>
+            </div>
+          </article>
+
+          <!-- رأي 3 -->
+          <article class="bg-white rounded-2xl p-6 border border-sand/80 shadow-luxury flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-1 text-gold mb-3" aria-label="تقييم 5 من 5">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p class="text-sm sm:text-base text-charcoal/90 leading-relaxed mb-5">
+                "كنت بدور على هدية شيك لجواز أختي واشتريت طقم فوط السفرة بالحلقات المعدنية مع مفرش القطن المصري. الخامة فندقية فعلاً وخدمة العملاء محترمين جداً في المتابعة."
+              </p>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-sand/60">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-charcoal text-bronze font-bold flex items-center justify-center text-sm">ك.ط</div>
+                <div>
+                  <h4 class="text-sm font-bold text-charcoal">كريم طارق</h4>
+                  <span class="text-xs text-muted">الشيخ زايد - الجيزة</span>
+                </div>
+              </div>
+              <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full">شراء مؤكد</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 7. التذييل (Footer) وروابط السوشيال ميديا ==================== -->
+  <footer id="contact" class="bg-charcoal text-ivory pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+
+        <!-- عن البراند -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-10 h-10 rounded-xl bg-bronze text-ivory flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" />
+              </svg>
+            </div>
+            <div>
+              <span class="block text-xl font-extrabold text-white">دار اللوكس</span>
+              <span class="block text-[11px] uppercase tracking-[0.2em] text-bronze">DAR LUXE</span>
+            </div>
+          </div>
+          <p class="text-sm text-ivory/70 leading-relaxed">
+            متجر إلكتروني متخصص في المفروشات الفاخرة وديكور المنزل العصري في مصر. نجمع بين الأناقة الهادئة وجودة الخامات المصرية الأصيلة.
+          </p>
+        </div>
+
+        <!-- روابط سريعة -->
+        <div>
+          <h3 class="text-base font-bold text-white mb-4">روابط سريعة</h3>
+          <ul class="space-y-2.5 text-sm text-ivory/75">
+            <li><a href="#home" class="hover:text-bronze transition-colors">الرئيسية</a></li>
+            <li><a href="#products" class="hover:text-bronze transition-colors">جميع المنتجات</a></li>
+            <li><a href="#why-us" class="hover:text-bronze transition-colors">لماذا دار اللوكس؟</a></li>
+            <li><a href="#reviews" class="hover:text-bronze transition-colors">آراء عملائنا</a></li>
+            <li><button type="button" onclick="openCart()" class="hover:text-bronze transition-colors cursor-pointer">سلة المشتريات</button></li>
+          </ul>
+        </div>
+
+        <!-- بيانات التواصل -->
+        <div>
+          <h3 class="text-base font-bold text-white mb-4">تواصل معنا</h3>
+          <ul class="space-y-3 text-sm text-ivory/75">
+            <li class="flex items-start gap-2.5">
+              <svg class="w-5 h-5 text-bronze shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span>القاهرة الجديدة، مصر — الشحن لجميع المحافظات</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <svg class="w-5 h-5 text-bronze shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              <span dir="ltr">010 2345 6789</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <svg class="w-5 h-5 text-bronze shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span>hello@darluxe-eg.com</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- هام لمشروع مبادئ الأعمال الإلكترونية:                                       -->
+        <!-- ضع روابط صفحات السوشيال ميديا الـ 3 الخاصة بك (فيسبوك - إنستجرام - تيك توك)  -->
+        <!-- مكان الروابط الموجودة في خاصية href أدناه                                  -->
+        <!-- IMPORTANT: Replace the 3 href URLs below with your actual social links    -->
+        <!-- ========================================================================= -->
+        <div>
+          <h3 class="text-base font-bold text-white mb-2">تابعنا وشاهد الريلز والعروض</h3>
+          <p class="text-xs text-ivory/65 mb-4">شاهد فيديوهات المنتجات على الطبيعة وأحدث العروض الحصرية على صفحاتنا الرسمية:</p>
+
+          <div class="flex flex-col gap-2.5">
+            <!-- 1. رابط صفحة فيسبوك (ضع لينك صفحتك هنا مكان الرابط الافتراضي) -->
+            <a
+              href="https://www.facebook.com/YOUR_FACEBOOK_PAGE"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-between bg-white/10 hover:bg-[#1877F2] text-white px-4 py-2.5 rounded-xl transition-all duration-300 border border-white/10 group"
+            >
+              <span class="flex items-center gap-2.5 text-sm font-bold">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.403 24 24 23.403 24 22.674V1.326C24 .597 23.403 0 22.675 0z"/>
+                </svg>
+                فيسبوك | Facebook
+              </span>
+              <span class="text-xs text-white/70 group-hover:text-white">←</span>
+            </a>
+
+            <!-- 2. رابط صفحة إنستجرام (ضع لينك صفحتك هنا مكان الرابط الافتراضي) -->
+            <a
+              href="https://www.instagram.com/YOUR_INSTAGRAM_PAGE"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-between bg-white/10 hover:bg-gradient-to-r hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#FCAF45] text-white px-4 py-2.5 rounded-xl transition-all duration-300 border border-white/10 group"
+            >
+              <span class="flex items-center gap-2.5 text-sm font-bold">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                إنستجرام | Instagram
+              </span>
+              <span class="text-xs text-white/70 group-hover:text-white">←</span>
+            </a>
+
+            <!-- 3. رابط صفحة تيك توك (ضع لينك صفحتك هنا مكان الرابط الافتراضي) -->
+            <a
+              href="https://www.tiktok.com/@YOUR_TIKTOK_PAGE"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-between bg-white/10 hover:bg-black text-white px-4 py-2.5 rounded-xl transition-all duration-300 border border-white/10 group"
+            >
+              <span class="flex items-center gap-2.5 text-sm font-bold">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                </svg>
+                تيك توك | TikTok
+              </span>
+              <span class="text-xs text-white/70 group-hover:text-white">←</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- حقوق الملكية -->
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ivory/60">
+        <p>© 2026 دار اللوكس (Dar Luxe). جميع الحقوق محفوظة — مشروع مادة مبادئ الأعمال الإلكترونية.</p>
+        <div class="flex items-center gap-4">
+          <span>الدفع عند الاستلام</span>
+          <span>•</span>
+          <span>فودافون كاش</span>
+          <span>•</span>
+          <span>البطاقات البنكية</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== 8. نافذة تفاصيل المنتج السريعة (Quick View Modal) ==================== -->
+  <div
+    id="quickViewModal"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-charcoal/60 backdrop-blur-sm"
+    onclick="if(event.target === this) closeQuickView()"
+  >
+    <div class="bg-ivory rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-sand relative">
+      <!-- زر الإغلاق -->
+      <button
+        type="button"
+        onclick="closeQuickView()"
+        class="absolute top-4 left-4 z-10 w-10 h-10 rounded-full bg-white/90 hover:bg-charcoal hover:text-white text-charcoal flex items-center justify-center shadow-md transition-colors cursor-pointer"
+        aria-label="إغلاق"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <div id="quickViewContent" class="grid grid-cols-1 md:grid-cols-2">
+        <!-- يتم تعبئة تفاصيل المنتج ديناميكياً -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 9. درج سلة المشتريات الجانبي (Slide-out Cart Drawer) ==================== -->
+  <div id="cartOverlay" class="fixed inset-0 z-50 hidden bg-charcoal/55 backdrop-blur-sm transition-opacity" onclick="closeCart()"></div>
+
+  <aside
+    id="cartDrawer"
+    class="fixed top-0 left-0 z-50 h-full w-full max-w-md bg-ivory shadow-2xl transform -translate-x-full transition-transform duration-300 ease-out flex flex-col border-r border-sand"
+    aria-label="سلة المشتريات"
+  >
+    <!-- رأس السلة -->
+    <div class="flex items-center justify-between px-5 py-4 border-b border-sand bg-white">
+      <div class="flex items-center gap-2.5">
+        <h2 class="text-lg font-extrabold text-charcoal">سلة المشتريات</h2>
+        <span id="cartDrawerCount" class="text-xs font-bold bg-cream text-bronze px-2.5 py-1 rounded-full">0 منتج</span>
+      </div>
+      <button
+        type="button"
+        onclick="closeCart()"
+        class="p-2 rounded-xl text-muted hover:text-charcoal hover:bg-cream transition-colors cursor-pointer"
+        aria-label="إغلاق السلة"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- شريط تقدم الشحن المجاني -->
+    <div id="freeShippingBar" class="px-5 py-3 bg-cream/80 border-b border-sand/70 text-xs">
+      <div class="flex items-center justify-between mb-1.5">
+        <span id="freeShippingText" class="font-bold text-charcoal">أضف منتجات بقيمة 1,500 ج.م للشحن المجاني</span>
+      </div>
+      <div class="w-full h-2 bg-sand/70 rounded-full overflow-hidden">
+        <div id="freeShippingProgress" class="h-full bg-bronze rounded-full transition-all duration-500" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- قائمة العناصر داخل السلة -->
+    <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-5 space-y-4">
+      <!-- يتم حقن عناصر السلة ديناميكياً -->
+    </div>
+
+    <!-- ملخص السلة وكود الخصم وزر إتمام الطلب -->
+    <div id="cartFooter" class="border-t border-sand bg-white p-5 space-y-4 hidden">
+      <!-- كود الخصم -->
+      <div>
+        <label for="promoCodeInput" class="block text-xs font-bold text-charcoal mb-1.5">هل لديك كود خصم؟ (جرّب EBIZ15)</label>
+        <div class="flex gap-2">
+          <input
+            type="text"
+            id="promoCodeInput"
+            placeholder="أدخل كود الخصم"
+            class="flex-1 bg-ivory border border-sand rounded-xl px-3.5 py-2 text-sm font-semibold uppercase focus:outline-none focus:border-bronze"
+          />
+          <button
+            type="button"
+            onclick="applyPromoCode()"
+            class="bg-charcoal hover:bg-bronze text-ivory px-4 py-2 rounded-xl text-sm font-bold transition-colors cursor-pointer shrink-0"
+          >
+            تطبيق
+          </button>
+        </div>
+        <p id="promoFeedback" class="text-xs font-semibold mt-1.5 hidden"></p>
+      </div>
+
+      <!-- تفاصيل الحساب -->
+      <div class="space-y-2 text-sm border-t border-sand/70 pt-3">
+        <div class="flex items-center justify-between text-muted">
+          <span>المجموع الفرعي</span>
+          <span id="cartSubtotal" class="font-bold text-charcoal">0 ج.م</span>
+        </div>
+
+        <div id="discountRow" class="hidden items-center justify-between text-emerald-700">
+          <span class="flex items-center gap-1.5">
+            <span>الخصم (15%)</span>
+            <button type="button" onclick="removePromoCode()" class="text-[11px] underline text-red-600 cursor-pointer">إزالة</button>
+          </span>
+          <span id="cartDiscount" class="font-bold">-0 ج.م</span>
+        </div>
+
+        <div class="flex items-center justify-between text-muted">
+          <span>تكلفة الشحن</span>
+          <span id="cartShipping" class="font-bold text-charcoal">65 ج.م</span>
+        </div>
+
+        <div class="flex items-center justify-between text-base font-extrabold text-charcoal pt-2 border-t border-sand/70">
+          <span>الإجمالي النهائي</span>
+          <span id="cartTotal" class="text-bronze text-lg">0 ج.م</span>
+        </div>
+      </div>
+
+      <!-- زر إتمام الطلب -->
+      <button
+        type="button"
+        onclick="openCheckoutModal()"
+        class="w-full bg-charcoal hover:bg-bronze text-ivory py-3.5 rounded-xl font-bold text-base transition-all duration-300 shadow-luxury cursor-pointer flex items-center justify-center gap-2"
+      >
+        <span>إتمام الطلب الآن</span>
+        <svg class="w-5 h-5 rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==================== 10. نافذة إتمام الطلب وتأكيده (Checkout & Confirmation Modal) ==================== -->
+  <div
+    id="checkoutModal"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-charcoal/65 backdrop-blur-sm"
+    onclick="if(event.target === this) closeCheckoutModal()"
+  >
+    <div class="bg-ivory rounded-3xl max-w-2xl w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-sand relative">
+      <!-- زر الإغلاق -->
+      <button
+        type="button"
+        onclick="closeCheckoutModal()"
+        class="absolute top-4 left-4 z-10 w-9 h-9 rounded-full bg-white hover:bg-charcoal hover:text-white text-charcoal flex items-center justify-center shadow-sm transition-colors cursor-pointer"
+        aria-label="إغلاق"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- نموذج بيانات التوصيل والدفع -->
+      <div id="checkoutFormView" class="p-6 sm:p-8">
+        <div class="mb-6">
+          <span class="text-xs font-bold text-bronze">خطوة واحدة لتأكيد طلبك</span>
+          <h2 class="text-2xl font-extrabold text-charcoal mt-0.5">إتمام الطلب والشحن</h2>
+        </div>
+
+        <!-- ملخص سريع للطلب داخل النافذة -->
+        <div class="bg-white rounded-2xl p-4 border border-sand/80 mb-6 flex flex-wrap items-center justify-between gap-2 text-sm">
+          <div>
+            <span class="text-muted">عدد القطع: </span>
+            <strong id="checkoutItemsCount" class="text-charcoal">0</strong>
+          </div>
+          <div>
+            <span class="text-muted">الشحن: </span>
+            <strong id="checkoutShippingSummary" class="text-charcoal">65 ج.م</strong>
+          </div>
+          <div>
+            <span class="text-muted">الإجمالي المطلوب: </span>
+            <strong id="checkoutFinalTotal" class="text-bronze text-base font-extrabold">0 ج.م</strong>
+          </div>
+        </div>
+
+        <form id="checkoutForm" onsubmit="submitOrder(event)" class="space-y-4" novalidate>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- الاسم بالكامل -->
+            <div>
+              <label for="customerName" class="block text-xs font-bold text-charcoal mb-1.5">الاسم بالكامل *</label>
+              <input
+                type="text"
+                id="customerName"
+                required
+                placeholder="مثال: أحمد محمد علي"
+                class="w-full bg-white border border-sand rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-bronze"
+              />
+            </div>
+
+            <!-- رقم الموبايل -->
+            <div>
+              <label for="customerPhone" class="block text-xs font-bold text-charcoal mb-1.5">رقم الموبايل *</label>
+              <input
+                type="tel"
+                id="customerPhone"
+                required
+                placeholder="01xxxxxxxxx"
+                dir="ltr"
+                class="w-full bg-white border border-sand rounded-xl px-4 py-2.5 text-sm text-right focus:outline-none focus:border-bronze"
+              />
+            </div>
+          </div>
+
+          <!-- المحافظة -->
+          <div>
+            <label for="customerGov" class="block text-xs font-bold text-charcoal mb-1.5">المحافظة *</label>
+            <select
+              id="customerGov"
+              required
+              class="w-full bg-white border border-sand rounded-xl px-4 py-2.5 text-sm font-semibold text-charcoal focus:outline-none focus:border-bronze"
+            >
+              <option value="">اختر المحافظة...</option>
+              <option value="القاهرة">القاهرة</option>
+              <option value="الجيزة">الجيزة</option>
+              <option value="الإسكندرية">الإسكندرية</option>
+              <option value="المنصورة (الدقهلية)">المنصورة (الدقهلية)</option>
+              <option value="طنطا (الغربية)">طنطا (الغربية)</option>
+              <option value="الشرقية">الشرقية</option>
+              <option value="القليوبية">القليوبية</option>
+              <option value="بورسعيد">بورسعيد</option>
+              <option value="الإسماعيلية">الإسماعيلية</option>
+              <option value="السويس">السويس</option>
+              <option value="أسيوط">أسيوط</option>
+              <option value="المنيا">المنيا</option>
+              <option value="البحر الأحمر (الغردقة)">البحر الأحمر (الغردقة)</option>
+              <option value="محافظة أخرى">محافظة أخرى</option>
+            </select>
+          </div>
+
+          <!-- العنوان بالتفصيل -->
+          <div>
+            <label for="customerAddress" class="block text-xs font-bold text-charcoal mb-1.5">العنوان بالتفصيل *</label>
+            <textarea
+              id="customerAddress"
+              rows="2"
+              required
+              placeholder="اسم الشارع، رقم العمارة، الدور، الشقة، وأقرب علامة مميزة..."
+              class="w-full bg-white border border-sand rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-bronze resize-none"
+            ></textarea>
+          </div>
+
+          <!-- طريقة الدفع -->
+          <div>
+            <span class="block text-xs font-bold text-charcoal mb-2">طريقة الدفع *</span>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <label class="cursor-pointer">
+                <input type="radio" name="paymentMethod" value="الدفع عند الاستلام" checked class="peer sr-only" onchange="updatePaymentNote(this.value)" />
+                <div class="p-3 rounded-xl border border-sand bg-white peer-checked:border-bronze peer-checked:bg-cream/80 transition-all text-center">
+                  <span class="block text-sm font-bold text-charcoal">الدفع عند الاستلام</span>
+                  <span class="block text-[11px] text-muted mt-0.5">نقداً للمندوب</span>
+                </div>
+              </label>
+
+              <label class="cursor-pointer">
+                <input type="radio" name="paymentMethod" value="فودافون كاش" class="peer sr-only" onchange="updatePaymentNote(this.value)" />
+                <div class="p-3 rounded-xl border border-sand bg-white peer-checked:border-bronze peer-checked:bg-cream/80 transition-all text-center">
+                  <span class="block text-sm font-bold text-charcoal">فودافون كاش</span>
+                  <span class="block text-[11px] text-muted mt-0.5">تحويل فوري</span>
+                </div>
+              </label>
+
+              <label class="cursor-pointer">
+                <input type="radio" name="paymentMethod" value="بطاقة بنكية" class="peer sr-only" onchange="updatePaymentNote(this.value)" />
+                <div class="p-3 rounded-xl border border-sand bg-white peer-checked:border-bronze peer-checked:bg-cream/80 transition-all text-center">
+                  <span class="block text-sm font-bold text-charcoal">بطاقة بنكية</span>
+                  <span class="block text-[11px] text-muted mt-0.5">Visa / Mastercard</span>
+                </div>
+              </label>
+            </div>
+            <p id="paymentMethodNote" class="text-xs text-muted mt-2 bg-cream/60 rounded-xl px-3.5 py-2 border border-sand/60">
+              ستقوم بسداد قيمة الطلب نقداً لمندوب الشحن عند الاستلام ومعاينة المنتج.
+            </p>
+          </div>
+
+          <!-- رسالة خطأ التحقق من المدخلات -->
+          <p id="checkoutError" class="hidden text-xs font-bold text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-2.5"></p>
+
+          <!-- زر تأكيد الطلب -->
+          <button
+            type="submit"
+            class="w-full bg-charcoal hover:bg-bronze text-ivory py-3.5 rounded-xl font-bold text-base transition-all duration-300 shadow-luxury cursor-pointer"
+          >
+            تأكيد الطلب الآن
+          </button>
+        </form>
+      </div>
+
+      <!-- شاشة تأكيد الطلب بعد الإرسال -->
+      <div id="orderConfirmationView" class="hidden p-6 sm:p-8 text-center space-y-5">
+        <div class="w-20 h-20 mx-auto rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+
+        <div>
+          <span class="inline-block px-3.5 py-1 rounded-full bg-cream text-bronze font-extrabold text-xs tracking-wider mb-2" id="confirmedOrderNumber">
+            #DL-2026-0000
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-charcoal">تم استلام طلبك بنجاح!</h2>
+          <p class="text-sm text-muted mt-1.5">شكراً لتسوقك من <strong class="text-charcoal">دار اللوكس</strong>. سيتواصل معك فريق خدمة العملاء قريباً لتأكيد موعد التوصيل.</p>
+        </div>
+
+        <!-- ملخص بيانات الطلب المؤكد -->
+        <div id="confirmedOrderSummary" class="bg-white rounded-2xl p-5 border border-sand text-right space-y-2.5 text-sm">
+          <!-- يتم تعبئته ديناميكياً -->
+        </div>
+
+        <button
+          type="button"
+          onclick="finishOrderFlow()"
+          class="w-full sm:w-auto px-8 py-3 rounded-xl bg-charcoal hover:bg-bronze text-ivory font-bold text-sm transition-colors cursor-pointer"
+        >
+          متابعة التسوق في المتجر
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== حاوية الإشعارات العائمة (Toast Notifications) ==================== -->
+  <div id="toastContainer" class="fixed bottom-5 right-5 z-[60] flex flex-col gap-2.5 pointer-events-none max-w-xs sm:max-w-sm"></div>
+
+  <!-- ==================== منطق التطبيق الكامل (JavaScript) ==================== -->
+  <script>
+    // =========================================================================
+    // 1. بيانات المنتجات (8 منتجات واقعية بالمواصفات والأسعار بالجنيه المصري)
+    // =========================================================================
+    const PRODUCTS = [
+      {
+        id: 1,
+        name: 'طقم مفرش سفرة 6 كراسي فاخر',
+        subtitle: '150×300 سم + 4 خداديات متناسقة',
+        category: 'أطقم سفرة',
+        price: 1450,
+        oldPrice: 1750,
+        rating: 4.9,
+        reviewsCount: 84,
+        badge: 'الأكثر مبيعاً',
+        badgeType: 'bestseller',
+        bestsellerRank: 1,
+        image: 'https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=800&q=80',
+        fallbackText: 'Dining+Set+6+Chairs',
+        description: 'طقم مفرش سفرة فاخر مصمم بعناية ليتناسب مع غرف السفرة العصرية والكلاسيكية، يأتي بمقاس 150×300 سم مع 4 خداديات متناسقة تضيف دفئاً وأناقة استثنائية لضيوفك.',
+        specs: [
+          'المقاس: مفرش 150×300 سم + 4 خداديات (45×45 سم)',
+          'الخامة: كتان طبيعي مخلوط بقطن مصري معالج ضد البقع',
+          'التصميم: حواف مطرزة بخيوط ذهبية هادئة',
+          'العناية: قابل للغسيل الآلي على درجة حرارة منخفضة'
+        ]
+      },
+      {
+        id: 2,
+        name: 'طقم مفرش سفرة 4 كراسي مودرن',
+        subtitle: 'مفرش 140×220 سم + 4 خداديات',
+        category: 'أطقم سفرة',
+        price: 1100,
+        oldPrice: 1300,
+        rating: 4.8,
+        reviewsCount: 62,
+        badge: 'خصم',
+        badgeType: 'discount',
+        bestsellerRank: 2,
+        image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80',
+        fallbackText: 'Modern+Dining+Set',
+        description: 'طقم سفرة عصري مثالي للشقق المودرن والمساحات الهادئة، يجمع بين الألوان الترابية الراقية والملمس الناعم الذي يمنح طاولة الطعام مظهراً فندقياً متكاملاً.',
+        specs: [
+          'المقاس: مفرش 140×220 سم + 4 خداديات متناسقة',
+          'الخامة: قطن كتان فاخر عالي الكثافة',
+          'الألوان: عاجي دافئ مع تفاصيل برونزية',
+          'مقاوم للتجعد وسهل الكي'
+        ]
+      },
+      {
+        id: 3,
+        name: 'طقم 4 خداديات ديكور قطيفة مطرزة',
+        subtitle: 'قطيفة ناعمة بتطريز هندسي راقي',
+        category: 'خداديات وكوشنز',
+        price: 580,
+        oldPrice: null,
+        rating: 4.9,
+        reviewsCount: 51,
+        badge: 'الأكثر مبيعاً',
+        badgeType: 'bestseller',
+        bestsellerRank: 3,
+        image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80',
+        fallbackText: 'Velvet+Cushions',
+        description: 'جدّد إطلالة الأنتريه أو غرفة المعيشة فوراً مع طقم مكون من 4 خداديات قطيفة ناعمة بتطريز دقيق وسوستة مخفية لسهولة الفك والتنظيف.',
+        specs: [
+          'العدد: 4 خداديات ديكور (أغطية + حشو فايبر سوفت)',
+          'المقاس: 45×45 سم لكل قطعة',
+          'الخامة: قطيفة تركي فاخرة عالية النعومة',
+          'التفاصيل: سوستة مخفية متينة وتطريز بارز'
+        ]
+      },
+      {
+        id: 4,
+        name: 'رانر سفرة كتان طبيعي بحواف ذهبية',
+        subtitle: 'قطعة ديكور أنيقة للطاولة والكونسول',
+        category: 'رانر ومفارش',
+        price: 390,
+        oldPrice: null,
+        rating: 4.7,
+        reviewsCount: 43,
+        badge: 'جديد',
+        badgeType: 'new',
+        bestsellerRank: 4,
+        image: 'https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=800&q=80',
+        fallbackText: 'Linen+Table+Runner',
+        description: 'رانر كتان طبيعي بتصميم بسيط وراقٍ مزين بحواف ذهبية ناعمة يبرز جمال خشب السفرة أو البوفيه ويمنحك لمسة فاخرة في العزومات واليومي.',
+        specs: [
+          'المقاس: 35×220 سم (مناسب لسفرة 6 إلى 8 كراسي)',
+          'الخامة: 100% كتان طبيعي منسوج بعناية',
+          'التشطيب: حواف ذهبية متقنة ومقاومة للنسل',
+          'متعدد الاستخدامات للسفرة أو الكونسول'
+        ]
+      },
+      {
+        id: 5,
+        name: 'مفرش سفرة قطن مصري فاخر 150×300 سم',
+        subtitle: 'قطن مصري 100% بتصميم فندقي هادئ',
+        category: 'رانر ومفارش',
+        price: 950,
+        oldPrice: null,
+        rating: 4.8,
+        reviewsCount: 39,
+        badge: 'الأكثر مبيعاً',
+        badgeType: 'bestseller',
+        bestsellerRank: 5,
+        image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80',
+        fallbackText: 'Egyptian+Cotton+Tablecloth',
+        description: 'مفرش سفرة واسع منسوج من أجود خيوط القطن المصري طويل التيلة، يتميز بملمس ناعم وثبات ممتاز على الطاولة ليعكس ذوقاً كلاسيكياً فاخراً.',
+        specs: [
+          'المقاس: 150×300 سم (يناسب 6 إلى 8 كراسي)',
+          'الخامة: قطن مصري 100% عالي الكثافة',
+          'المميزات: لا ينكمش مع الغسيل وثابت اللون',
+          'تغليف أنيق مناسب للهدايا وتجهيز العرائس'
+        ]
+      },
+      {
+        id: 6,
+        name: 'طقم كوشنز بوهيمي عصري (3 قطع)',
+        subtitle: 'تصميم بوهو دافئ بألوان طبيعية وشراشيب',
+        category: 'خداديات وكوشنز',
+        price: 490,
+        oldPrice: null,
+        rating: 4.8,
+        reviewsCount: 34,
+        badge: 'جديد',
+        badgeType: 'new',
+        bestsellerRank: 6,
+        image: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=800&q=80',
+        fallbackText: 'Boho+Cushion+Set',
+        description: 'طقم من 3 كوشنز بستايل بوهيمي عصري يجمع بين الأنسجة البارزة والألوان الدافئة ليمنح غرفة المعيشة أو ركن القراءة طابعاً حيوياً ومريحاً.',
+        specs: [
+          'العدد: 3 قطع متناسقة (مربع + مستطيل ديكوري)',
+          'الخامة: قطن منسوج يدوياً بتفاصيل بارزة',
+          'الألوان: أوف وايت، بيج رملي، وبرونزي دافئ',
+          'شامل الحشو الداخلي الممتلئ'
+        ]
+      },
+      {
+        id: 7,
+        name: 'مفرش طاولة قهوة مطرز كلاسيك',
+        subtitle: 'لمسة رقيقة لمنتصف غرفة الاستقبال',
+        category: 'رانر ومفارش',
+        price: 320,
+        oldPrice: null,
+        rating: 4.6,
+        reviewsCount: 28,
+        badge: null,
+        badgeType: null,
+        bestsellerRank: 7,
+        image: 'https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=800&q=80',
+        fallbackText: 'Coffee+Table+Cloth',
+        description: 'مفرش أنيق لطاولة القهوة الوسطى في الريسبشن، مزين بتطريز ناعم يحمي سطح الطاولة ويبرز جمال الإكسسوارات والشموع عليها.',
+        specs: [
+          'المقاس: 90×90 سم (مناسب للطاولات المربعة والمستديرة)',
+          'الخامة: كتان ناعم سهل التنظيف',
+          'التصميم: إطار مطرز بدقة عالية',
+          'مقاوم للاصفرار وسهل الكي'
+        ]
+      },
+      {
+        id: 8,
+        name: 'طقم فوط سفرة كتان بحلقات معدنية (6 قطع)',
+        subtitle: 'تجهيز سفرة فاخر للمناسبات والعزومات',
+        category: 'إكسسوارات السفرة',
+        price: 420,
+        oldPrice: null,
+        rating: 4.9,
+        reviewsCount: 47,
+        badge: 'جديد',
+        badgeType: 'new',
+        bestsellerRank: 8,
+        image: 'https://images.unsplash.com/photo-1595514535415-dae8580c416c?auto=format&fit=crop&w=800&q=80',
+        fallbackText: 'Linen+Napkin+Set',
+        description: 'أكمل أناقة مائدتك بطقم فاخر مكون من 6 فوط سفرة من الكتان الطبيعي مع 6 حلقات معدنية ذهبية مطفية تمنح ضيوفك تجربة ضيافة راقية.',
+        specs: [
+          'المحتويات: 6 فوط سفرة كتان + 6 حلقات معدنية ذهبية',
+          'مقاس الفوطة: 45×45 سم بخياطة محكمة',
+          'الحلقات: معدن مقاوم للصدأ بلون ذهبي مطفي فاخر',
+          'متناسق مع جميع أطقم السفرة والرانر لدينا'
+        ]
+      }
+    ];
+
+    // =========================================================================
+    // 2. حالة التطبيق (Application State)
+    // =========================================================================
+    const FREE_SHIPPING_THRESHOLD = 1500;
+    const STANDARD_SHIPPING_COST = 65;
+    const VALID_PROMO_CODE = 'EBIZ15';
+    const PROMO_DISCOUNT_RATE = 0.15;
+
+    let state = {
+      activeCategory: 'الكل',
+      searchQuery: '',
+      sortBy: 'bestseller',
+      cart: [],
+      promoApplied: false,
+      quickViewProductId: null,
+      quickViewQty: 1
+    };
+
+    // تحميل السلة من التخزين المحلي بأمان
+    function loadCartFromStorage() {
+      try {
+        const saved = localStorage.getItem('darLuxeCart_v1');
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed)) {
+            state.cart = parsed;
+          }
+        }
+      } catch (err) {
+        console.warn('تعذر قراءة السلة من التخزين المحلي:', err);
+      }
+    }
+
+    function saveCartToStorage() {
+      try {
+        localStorage.setItem('darLuxeCart_v1', JSON.stringify(state.cart));
+      } catch (err) {
+        console.warn('تعذر حفظ السلة في التخزين المحلي:', err);
+      }
+    }
+
+    // تنسيق الأسعار بالجنيه المصري
+    function formatEGP(amount) {
+      return Math.round(amount).toLocaleString('en-US') + ' ج.م';
+    }
+
+    // =========================================================================
+    // 3. عرض المنتجات والفلترة والترتيب والبحث
+    // =========================================================================
+    function getFilteredProducts() {
+      const q = state.searchQuery.trim().toLowerCase();
+
+      let list = PRODUCTS.filter((product) => {
+        const matchesCategory = state.activeCategory === 'الكل' || product.category === state.activeCategory;
+        const matchesSearch =
+          !q ||
+          product.name.toLowerCase().includes(q) ||
+          product.subtitle.toLowerCase().includes(q) ||
+          product.category.toLowerCase().includes(q) ||
+          product.description.toLowerCase().includes(q);
+        return matchesCategory && matchesSearch;
+      });
+
+      // الترتيب
+      if (state.sortBy === 'price-asc') {
+        list.sort((a, b) => a.price - b.price);
+      } else if (state.sortBy === 'price-desc') {
+        list.sort((a, b) => b.price - a.price);
+      } else {
+        list.sort((a, b) => a.bestsellerRank - b.bestsellerRank);
+      }
+
+      return list;
+    }
+
+    function getBadgeClasses(type) {
+      if (type === 'bestseller') return 'bg-charcoal text-ivory';
+      if (type === 'discount') return 'bg-red-600 text-white';
+      if (type === 'new') return 'bg-bronze text-white';
+      return '';
+    }
+
+    function renderProducts() {
+      const grid = document.getElementById('productsGrid');
+      const emptyState = document.getElementById('emptyProductsState');
+      const countLabel = document.getElementById('productsCountLabel');
+      const products = getFilteredProducts();
+
+      countLabel.textContent = `عرض ${products.length} ${products.length === 1 ? 'منتج' : 'منتجات'}`;
+
+      if (products.length === 0) {
+        grid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+
+      grid.innerHTML = products.map((product) => {
+        const discountPercent = product.oldPrice
+          ? Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)
+          : null;
+
+        return `
+          <article class="group bg-white rounded-2xl border border-sand/80 overflow-hidden shadow-luxury hover:shadow-luxury-hover transition-all duration-300 flex flex-col">
+            <!-- صورة المنتج والشارات -->
+            <div class="relative aspect-[4/3] bg-cream overflow-hidden cursor-pointer" onclick="openQuickView(${product.id})">
+              <img
+                src="${product.image}"
+                alt="${product.name}"
+                loading="lazy"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                onerror="this.onerror=null;this.src='https://placehold.co/600x450/F3EEE6/1E242B?text=${product.fallbackText}';"
+              />
+              <div class="absolute top-3 right-3 flex flex-wrap gap-1.5">
+                ${product.badge ? `<span class="px-3 py-1 rounded-full text-[11px] font-bold shadow-sm ${getBadgeClasses(product.badgeType)}">${product.badge}</span>` : ''}
+                ${discountPercent ? `<span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-white/95 text-red-600 shadow-sm">وفر ${discountPercent}%</span>` : ''}
+              </div>
+            </div>
+
+            <!-- تفاصيل البطاقة -->
+            <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-1.5">
+                  <span class="text-[11px] font-bold text-bronze bg-cream px-2.5 py-0.5 rounded-full">${product.category}</span>
+                  <div class="flex items-center gap-1 text-xs font-bold text-charcoal">
+                    <span class="text-gold">★</span>
+                    <span>${product.rating}</span>
+                    <span class="text-muted font-normal">(${product.reviewsCount})</span>
+                  </div>
+                </div>
+
+                <h3
+                  class="text-base font-extrabold text-charcoal leading-snug mb-1 cursor-pointer hover:text-bronze transition-colors line-clamp-2"
+                  onclick="openQuickView(${product.id})"
+                >
+                  ${product.name}
+                </h3>
+                <p class="text-xs text-muted line-clamp-1 mb-3">${product.subtitle}</p>
+              </div>
+
+              <div>
+                <!-- السعر -->
+                <div class="flex items-baseline gap-2 mb-4">
+                  <span class="text-lg font-extrabold text-charcoal">${formatEGP(product.price)}</span>
+                  ${product.oldPrice ? `<span class="text-xs font-semibold text-muted line-through">${formatEGP(product.oldPrice)}</span>` : ''}
+                </div>
+
+                <!-- أزرار الإجراء -->
+                <div class="grid grid-cols-5 gap-2">
+                  <button
+                    type="button"
+                    onclick="addToCart(${product.id}, 1)"
+                    class="col-span-3 bg-charcoal hover:bg-bronze text-ivory py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold transition-colors duration-200 cursor-pointer flex items-center justify-center gap-1.5"
+                  >
+                    <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                    </svg>
+                    <span>أضف للسلة</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onclick="openQuickView(${product.id})"
+                    class="col-span-2 bg-cream hover:bg-sand/70 text-charcoal py-2.5 px-2 rounded-xl text-xs sm:text-sm font-bold transition-colors duration-200 cursor-pointer"
+                  >
+                    التفاصيل
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function filterByCategory(category) {
+      state.activeCategory = category;
+
+      // تحديث مظهر أزرار التصنيفات
+      document.querySelectorAll('.category-btn').forEach((btn) => {
+        const isActive = btn.dataset.category === category;
+        if (isActive) {
+          btn.className = 'category-btn px-4 py-2 rounded-xl text-sm font-bold transition-all cursor-pointer bg-charcoal text-ivory shadow-sm';
+        } else {
+          btn.className = 'category-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all cursor-pointer bg-white text-charcoal border border-sand hover:border-bronze';
+        }
+      });
+
+      renderProducts();
+    }
+
+    function handleSort(value) {
+      state.sortBy = value;
+      renderProducts();
+    }
+
+    function handleSearch(query) {
+      state.searchQuery = query;
+
+      // مزامنة حقلي البحث بين الموبايل والديسكتوب
+      const desktopInput = document.getElementById('desktopSearchInput');
+      const mobileInput = document.getElementById('mobileSearchInput');
+      if (desktopInput && desktopInput.value !== query) desktopInput.value = query;
+      if (mobileInput && mobileInput.value !== query) mobileInput.value = query;
+
+      renderProducts();
+    }
+
+    function resetFilters() {
+      state.activeCategory = 'الكل';
+      state.searchQuery = '';
+      state.sortBy = 'bestseller';
+      document.getElementById('desktopSearchInput').value = '';
+      document.getElementById('mobileSearchInput').value = '';
+      document.getElementById('sortSelect').value = 'bestseller';
+      filterByCategory('الكل');
+    }
+
+    // =========================================================================
+    // 4. نافذة تفاصيل المنتج السريعة (Quick View Modal)
+    // =========================================================================
+    function openQuickView(productId) {
+      const product = PRODUCTS.find((p) => p.id === productId);
+      if (!product) return;
+
+      state.quickViewProductId = productId;
+      state.quickViewQty = 1;
+
+      const content = document.getElementById('quickViewContent');
+      content.innerHTML = `
+        <div class="bg-cream relative min-h-[260px] md:min-h-[420px]">
+          <img
+            src="${product.image}"
+            alt="${product.name}"
+            class="w-full h-full object-cover"
+            onerror="this.onerror=null;this.src='https://placehold.co/600x600/F3EEE6/1E242B?text=${product.fallbackText}';"
+          />
+          ${product.badge ? `<span class="absolute top-4 right-4 px-3.5 py-1 rounded-full text-xs font-bold shadow-sm ${getBadgeClasses(product.badgeType)}">${product.badge}</span>` : ''}
+        </div>
+
+        <div class="p-6 sm:p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-xs font-bold text-bronze bg-cream px-3 py-1 rounded-full">${product.category}</span>
+              <span class="text-xs font-bold text-charcoal flex items-center gap-1">
+                <span class="text-gold">★</span> ${product.rating} (${product.reviewsCount} تقييم)
+              </span>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-extrabold text-charcoal leading-snug mb-2">${product.name}</h3>
+            <p class="text-sm text-muted leading-relaxed mb-4">${product.description}</p>
+
+            <!-- المواصفات والمقاسات -->
+            <div class="bg-white rounded-2xl p-4 border border-sand/80 mb-5">
+              <h4 class="text-xs font-extrabold text-charcoal mb-2">المواصفات والخامات:</h4>
+              <ul class="space-y-1.5 text-xs text-muted">
+                ${product.specs.map((spec) => `
+                  <li class="flex items-start gap-2">
+                    <span class="text-bronze font-bold">•</span>
+                    <span>${spec}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <!-- السعر ومحدد الكمية -->
+            <div class="flex items-center justify-between gap-4 mb-4">
+              <div>
+                <span class="text-2xl font-extrabold text-charcoal block">${formatEGP(product.price)}</span>
+                ${product.oldPrice ? `<span class="text-xs text-muted line-through">${formatEGP(product.oldPrice)}</span>` : ''}
+              </div>
+
+              <div class="flex items-center bg-white border border-sand rounded-xl overflow-hidden">
+                <button
+                  type="button"
+                  onclick="changeQuickViewQty(-1)"
+                  class="w-10 h-10 flex items-center justify-center font-bold text-lg hover:bg-cream transition-colors cursor-pointer"
+                  aria-label="تقليل الكمية"
+                >−</button>
+                <span id="quickViewQtyDisplay" class="w-10 text-center font-extrabold text-sm">1</span>
+                <button
+                  type="button"
+                  onclick="changeQuickViewQty(1)"
+                  class="w-10 h-10 flex items-center justify-center font-bold text-lg hover:bg-cream transition-colors cursor-pointer"
+                  aria-label="زيادة الكمية"
+                >+</button>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onclick="addQuickViewToCart()"
+              class="w-full bg-charcoal hover:bg-bronze text-ivory py-3.5 rounded-xl font-bold text-sm sm:text-base transition-all duration-300 shadow-luxury cursor-pointer"
+            >
+              إضافة إلى السلة
+            </button>
+          </div>
+        </div>
+      `;
+
+      const modal = document.getElementById('quickViewModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function changeQuickViewQty(delta) {
+      state.quickViewQty = Math.max(1, state.quickViewQty + delta);
+      const display = document.getElementById('quickViewQtyDisplay');
+      if (display) display.textContent = state.quickViewQty;
+    }
+
+    function addQuickViewToCart() {
+      if (!state.quickViewProductId) return;
+      addToCart(state.quickViewProductId, state.quickViewQty);
+      closeQuickView();
+    }
+
+    function closeQuickView() {
+      const modal = document.getElementById('quickViewModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    // =========================================================================
+    // 5. إدارة سلة المشتريات وحساب الخصم والشحن
+    // =========================================================================
+    function calculateCartTotals() {
+      const subtotal = state.cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+      const discount = state.promoApplied ? Math.round(subtotal * PROMO_DISCOUNT_RATE) : 0;
+      const afterDiscount = Math.max(0, subtotal - discount);
+      const shipping = subtotal === 0 ? 0 : (afterDiscount >= FREE_SHIPPING_THRESHOLD ? 0 : STANDARD_SHIPPING_COST);
+      const total = afterDiscount + shipping;
+      const totalItems = state.cart.reduce((sum, item) => sum + item.qty, 0);
+
+      return { subtotal, discount, afterDiscount, shipping, total, totalItems };
+    }
+
+    function addToCart(productId, qty = 1) {
+      const product = PRODUCTS.find((p) => p.id === productId);
+      if (!product) return;
+
+      const existing = state.cart.find((item) => item.id === productId);
+      if (existing) {
+        existing.qty += qty;
+      } else {
+        state.cart.push({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          image: product.image,
+          fallbackText: product.fallbackText,
+          qty: qty
+        });
+      }
+
+      saveCartToStorage();
+      renderCart();
+
+      // حركة نبض لعداد السلة
+      const badge = document.getElementById('cartCountBadge');
+      badge.classList.add('scale-125');
+      setTimeout(() => badge.classList.remove('scale-125'), 250);
+
+      showToast(`تمت إضافة "${product.name}" إلى السلة`, 'success');
+    }
+
+    function updateCartItemQty(productId, delta) {
+      const item = state.cart.find((i) => i.id === productId);
+      if (!item) return;
+
+      item.qty += delta;
+      if (item.qty <= 0) {
+        removeCartItem(productId);
+        return;
+      }
+
+      saveCartToStorage();
+      renderCart();
+    }
+
+    function removeCartItem(productId) {
+      state.cart = state.cart.filter((i) => i.id !== productId);
+      if (state.cart.length === 0) {
+        state.promoApplied = false;
+      }
+      saveCartToStorage();
+      renderCart();
+      showToast('تم حذف المنتج من السلة', 'info');
+    }
+
+    function applyPromoCode() {
+      const input = document.getElementById('promoCodeInput');
+      const feedback = document.getElementById('promoFeedback');
+      const entered = input.value.trim().toUpperCase();
+
+      feedback.classList.remove('hidden', 'text-emerald-700', 'text-red-600');
+
+      if (!entered) {
+        feedback.textContent = 'يرجى إدخال كود الخصم أولاً.';
+        feedback.classList.add('text-red-600');
+        return;
+      }
+
+      if (entered === VALID_PROMO_CODE) {
+        state.promoApplied = true;
+        feedback.textContent = '✓ تم تفعيل كود الخصم EBIZ15 بنجاح (خصم 15%)!';
+        feedback.classList.add('text-emerald-700');
+        renderCart();
+        showToast('تم تطبيق خصم 15% بكود EBIZ15 بنجاح!', 'success');
+      } else {
+        feedback.textContent = 'عذراً، كود الخصم غير صحيح. استخدم الكود EBIZ15.';
+        feedback.classList.add('text-red-600');
+        showToast('كود الخصم غير صالح، جرّب EBIZ15', 'error');
+      }
+    }
+
+    function removePromoCode() {
+      state.promoApplied = false;
+      document.getElementById('promoCodeInput').value = '';
+      document.getElementById('promoFeedback').classList.add('hidden');
+      renderCart();
+      showToast('تمت إزالة كود الخصم', 'info');
+    }
+
+    function renderCart() {
+      const totals = calculateCartTotals();
+
+      // تحديث العدادات
+      document.getElementById('cartCountBadge').textContent = totals.totalItems;
+      document.getElementById('cartDrawerCount').textContent = `${totals.totalItems} ${totals.totalItems === 1 ? 'قطعة' : 'قطع'}`;
+
+      // تحديث شريط الشحن المجاني
+      const progressBar = document.getElementById('freeShippingProgress');
+      const freeText = document.getElementById('freeShippingText');
+      const remaining = Math.max(0, FREE_SHIPPING_THRESHOLD - totals.afterDiscount);
+      const progressPercent = Math.min(100, (totals.afterDiscount / FREE_SHIPPING_THRESHOLD) * 100);
+      progressBar.style.width = `${progressPercent}%`;
+
+      if (totals.subtotal === 0) {
+        freeText.textContent = `أضف منتجات بقيمة ${formatEGP(FREE_SHIPPING_THRESHOLD)} للحصول على شحن مجاني`;
+      } else if (remaining === 0) {
+        freeText.textContent = '🎉 مبروك! طلبك مؤهل للحصول على شحن مجاني تماماً';
+      } else {
+        freeText.textContent = `متبقي ${formatEGP(remaining)} فقط للحصول على شحن مجاني`;
+      }
+
+      const container = document.getElementById('cartItemsContainer');
+      const footer = document.getElementById('cartFooter');
+
+      if (state.cart.length === 0) {
+        footer.classList.add('hidden');
+        container.innerHTML = `
+          <div class="h-full flex flex-col items-center justify-center text-center py-12">
+            <div class="w-16 h-16 rounded-2xl bg-cream text-bronze flex items-center justify-center mb-4">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+            </div>
+            <h3 class="text-base font-bold text-charcoal mb-1">سلة المشتريات فارغة حالياً</h3>
+            <p class="text-xs text-muted max-w-[220px] mb-5">استكشف تشكيلتنا الفاخرة من المفروشات وأضف ما يعجبك إلى السلة.</p>
+            <button
+              type="button"
+              onclick="closeCart()"
+              class="bg-charcoal hover:bg-bronze text-ivory px-6 py-2.5 rounded-xl text-sm font-bold transition-colors cursor-pointer"
+            >
+              تصفح المنتجات
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      footer.classList.remove('hidden');
+
+      container.innerHTML = state.cart.map((item) => `
+        <div class="flex gap-3.5 bg-white p-3.5 rounded-2xl border border-sand/80 shadow-sm">
+          <img
+            src="${item.image}"
+            alt="${item.name}"
+            class="w-20 h-20 rounded-xl object-cover bg-cream shrink-0"
+            onerror="this.onerror=null;this.src='https://placehold.co/160x160/F3EEE6/1E242B?text=${item.fallbackText}';"
+          />
+          <div class="flex-1 min-w-0 flex flex-col justify-between">
+            <div class="flex items-start justify-between gap-2">
+              <h4 class="text-sm font-bold text-charcoal leading-snug line-clamp-2">${item.name}</h4>
+              <button
+                type="button"
+                onclick="removeCartItem(${item.id})"
+                class="text-muted hover:text-red-600 p-1 rounded-lg transition-colors cursor-pointer shrink-0"
+                title="حذف المنتج"
+                aria-label="حذف المنتج"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="flex items-center justify-between mt-2">
+              <span class="text-sm font-extrabold text-bronze">${formatEGP(item.price * item.qty)}</span>
+
+              <div class="flex items-center bg-ivory border border-sand rounded-lg overflow-hidden">
+                <button
+                  type="button"
+                  onclick="updateCartItemQty(${item.id}, -1)"
+                  class="w-7 h-7 flex items-center justify-center font-bold text-sm hover:bg-cream transition-colors cursor-pointer"
+                  aria-label="تقليل"
+                >−</button>
+                <span class="w-7 text-center text-xs font-extrabold text-charcoal">${item.qty}</span>
+                <button
+                  type="button"
+                  onclick="updateCartItemQty(${item.id}, 1)"
+                  class="w-7 h-7 flex items-center justify-center font-bold text-sm hover:bg-cream transition-colors cursor-pointer"
+                  aria-label="زيادة"
+                >+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      // تحديث الإجماليات
+      document.getElementById('cartSubtotal').textContent = formatEGP(totals.subtotal);
+      const discountRow = document.getElementById('discountRow');
+      if (state.promoApplied && totals.discount > 0) {
+        discountRow.classList.remove('hidden');
+        discountRow.classList.add('flex');
+        document.getElementById('cartDiscount').textContent = '-' + formatEGP(totals.discount);
+      } else {
+        discountRow.classList.add('hidden');
+        discountRow.classList.remove('flex');
+      }
+
+      const shippingEl = document.getElementById('cartShipping');
+      if (totals.shipping === 0) {
+        shippingEl.textContent = 'مجاني';
+        shippingEl.className = 'font-bold text-emerald-700';
+      } else {
+        shippingEl.textContent = formatEGP(totals.shipping);
+        shippingEl.className = 'font-bold text-charcoal';
+      }
+
+      document.getElementById('cartTotal').textContent = formatEGP(totals.total);
+    }
+
+    function openCart() {
+      document.getElementById('cartOverlay').classList.remove('hidden');
+      document.getElementById('cartDrawer').classList.remove('-translate-x-full');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeCart() {
+      document.getElementById('cartOverlay').classList.add('hidden');
+      document.getElementById('cartDrawer').classList.add('-translate-x-full');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    // =========================================================================
+    // 6. إتمام الطلب وتأكيده (Checkout & Order Confirmation)
+    // =========================================================================
+    function openCheckoutModal() {
+      if (state.cart.length === 0) {
+        showToast('السلة فارغة! أضف منتجات أولاً لإتمام الطلب', 'error');
+        return;
+      }
+
+      closeCart();
+
+      const totals = calculateCartTotals();
+      document.getElementById('checkoutItemsCount').textContent = `${totals.totalItems} قطع`;
+      document.getElementById('checkoutShippingSummary').textContent = totals.shipping === 0 ? 'مجاني' : formatEGP(totals.shipping);
+      document.getElementById('checkoutFinalTotal').textContent = formatEGP(totals.total);
+
+      document.getElementById('checkoutFormView').classList.remove('hidden');
+      document.getElementById('orderConfirmationView').classList.add('hidden');
+      document.getElementById('checkoutError').classList.add('hidden');
+
+      const modal = document.getElementById('checkoutModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeCheckoutModal() {
+      const modal = document.getElementById('checkoutModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    function updatePaymentNote(method) {
+      const noteEl = document.getElementById('paymentMethodNote');
+      if (method === 'الدفع عند الاستلام') {
+        noteEl.textContent = 'ستقوم بسداد قيمة الطلب نقداً لمندوب الشحن عند الاستلام ومعاينة المنتج.';
+      } else if (method === 'فودافون كاش') {
+        noteEl.textContent = 'بعد تأكيد الطلب سيتواصل معك فريقنا على واتساب برقم محفظة فودافون كاش لإتمام التحويل.';
+      } else {
+        noteEl.textContent = 'سيتم إرسال رابط دفع إلكتروني آمن (Visa / Mastercard) فور تأكيد بيانات الشحن.';
+      }
+    }
+
+    function submitOrder(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('customerName').value.trim();
+      const phone = document.getElementById('customerPhone').value.trim();
+      const gov = document.getElementById('customerGov').value;
+      const address = document.getElementById('customerAddress').value.trim();
+      const paymentRadio = document.querySelector('input[name="paymentMethod"]:checked');
+      const paymentMethod = paymentRadio ? paymentRadio.value : 'الدفع عند الاستلام';
+      const errorEl = document.getElementById('checkoutError');
+
+      // التحقق من المدخلات
+      if (name.length < 3) {
+        errorEl.textContent = 'يرجى كتابة الاسم بالكامل بشكل صحيح.';
+        errorEl.classList.remove('hidden');
+        return;
+      }
+      if (!/^01[0125][0-9]{8}$/.test(phone.replace(/\s+/g, ''))) {
+        errorEl.textContent = 'يرجى إدخال رقم موبايل مصري صحيح مكون من 11 رقم (مثال: 01012345678).';
+        errorEl.classList.remove('hidden');
+        return;
+      }
+      if (!gov) {
+        errorEl.textContent = 'يرجى اختيار المحافظة.';
+        errorEl.classList.remove('hidden');
+        return;
+      }
+      if (address.length < 8) {
+        errorEl.textContent = 'يرجى كتابة العنوان بالتفصيل لضمان سرعة التوصيل.';
+        errorEl.classList.remove('hidden');
+        return;
+      }
+
+      errorEl.classList.add('hidden');
+
+      // توليد رقم طلب فريد
+      const randomDigits = Math.floor(1000 + Math.random() * 9000);
+      const orderNumber = `#DL-2026-${randomDigits}`;
+      const totals = calculateCartTotals();
+
+      // تعبئة شاشة التأكيد
+      document.getElementById('confirmedOrderNumber').textContent = `رقم الطلب: ${orderNumber}`;
+      document.getElementById('confirmedOrderSummary').innerHTML = `
+        <div class="flex justify-between gap-2 pb-2 border-b border-sand/60">
+          <span class="text-muted">العميل:</span>
+          <strong class="text-charcoal">${escapeHTML(name)}</strong>
+        </div>
+        <div class="flex justify-between gap-2 pb-2 border-b border-sand/60">
+          <span class="text-muted">رقم الموبايل:</span>
+          <strong class="text-charcoal" dir="ltr">${escapeHTML(phone)}</strong>
+        </div>
+        <div class="flex justify-between gap-2 pb-2 border-b border-sand/60">
+          <span class="text-muted">المحافظة والعنوان:</span>
+          <strong class="text-charcoal text-left">${escapeHTML(gov)} — ${escapeHTML(address)}</strong>
+        </div>
+        <div class="flex justify-between gap-2 pb-2 border-b border-sand/60">
+          <span class="text-muted">طريقة الدفع:</span>
+          <strong class="text-charcoal">${escapeHTML(paymentMethod)}</strong>
+        </div>
+        <div class="flex justify-between gap-2 pb-2 border-b border-sand/60">
+          <span class="text-muted">عدد المنتجات:</span>
+          <strong class="text-charcoal">${totals.totalItems} قطع</strong>
+        </div>
+        ${totals.discount > 0 ? `
+          <div class="flex justify-between gap-2 pb-2 border-b border-sand/60 text-emerald-700">
+            <span>خصم كود EBIZ15:</span>
+            <strong>-${formatEGP(totals.discount)}</strong>
+          </div>
+        ` : ''}
+        <div class="flex justify-between gap-2 pt-1 text-base">
+          <span class="font-bold text-charcoal">الإجمالي النهائي:</span>
+          <strong class="text-bronze font-extrabold">${formatEGP(totals.total)}</strong>
+        </div>
+      `;
+
+      // إظهار شاشة التأكيد وتفريغ السلة
+      document.getElementById('checkoutFormView').classList.add('hidden');
+      document.getElementById('orderConfirmationView').classList.remove('hidden');
+
+      state.cart = [];
+      state.promoApplied = false;
+      saveCartToStorage();
+      document.getElementById('promoCodeInput').value = '';
+      document.getElementById('promoFeedback').classList.add('hidden');
+      document.getElementById('checkoutForm').reset();
+      updatePaymentNote('الدفع عند الاستلام');
+      renderCart();
+
+      showToast(`تم تأكيد طلبك بنجاح برقم ${orderNumber}`, 'success');
+    }
+
+    function finishOrderFlow() {
+      closeCheckoutModal();
+    }
+
+    // =========================================================================
+    // 7. وظائف مساعدة (نسخ كود الخصم، الإشعارات، قائمة الموبايل، الحماية)
+    // =========================================================================
+    function copyPromoCode() {
+      try {
+        const tempInput = document.createElement('input');
+        tempInput.value = VALID_PROMO_CODE;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+      } catch (err) {
+        console.warn('تعذر النسخ التلقائي:', err);
+      }
+
+      // تعبئة الكود تلقائياً في حقل السلة لراحة العميل
+      const promoInput = document.getElementById('promoCodeInput');
+      if (promoInput) promoInput.value = VALID_PROMO_CODE;
+
+      showToast('تم نسخ كود الخصم EBIZ15 — استخدمه في السلة للحصول على خصم 15%', 'success');
+    }
+
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+
+      const colors = {
+        success: 'bg-charcoal text-ivory border-bronze/60',
+        error: 'bg-red-700 text-white border-red-400',
+        info: 'bg-charcoal/95 text-ivory border-sand/40'
+      };
+
+      toast.className = `pointer-events-auto flex items-center gap-2.5 px-4 py-3 rounded-2xl border shadow-xl text-xs sm:text-sm font-bold transform translate-y-4 opacity-0 transition-all duration-300 ${colors[type] || colors.success}`;
+      toast.innerHTML = `
+        <span class="w-2.5 h-2.5 rounded-full ${type === 'error' ? 'bg-white' : 'bg-bronze'} shrink-0"></span>
+        <span>${escapeHTML(message)}</span>
+      `;
+
+      container.appendChild(toast);
+
+      requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-4', 'opacity-0');
+      });
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-4', 'opacity-0');
+        setTimeout(() => toast.remove(), 300);
+      }, 3200);
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    }
+
+    function closeMobileMenu() {
+      document.getElementById('mobileMenu').classList.add('hidden');
+    }
+
+    function escapeHTML(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    // إغلاق النوافذ بزر Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeQuickView();
+        closeCart();
+        closeCheckoutModal();
+      }
+    });
+
+    // تهيئة المتجر عند تحميل الصفحة
+    window.addEventListener('DOMContentLoaded', () => {
+      loadCartFromStorage();
+      renderProducts();
+      renderCart();
+    });
+  </script>
+</body>
+</html>
